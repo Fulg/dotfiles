@@ -11,18 +11,23 @@ else
 end
 
 local tabFontSize;
+local opacity;
 
 config.font = wezterm.font({ family = "MonoLisa Nerd Font" })
 if (platform.is_win) then
 	config.font_size = 12
 	tabFontSize = 11
+	opacity = 0.8
+	config.default_prog = { "powershell.exe", "-NoLogo" }
 else
 	config.font_size = 16
 	tabFontSize = 13
+	opacity = 0.9
 end
 
 -- Slightly transparent and blurred background
-config.window_background_opacity = 0.9
+config.window_background_opacity = opacity
+config.win32_system_backdrop = "Acrylic"
 
 config.macos_window_background_blur = 30
 -- Removes the title bar, leaving only the tab bar. Keeps

@@ -10,8 +10,16 @@ else
 	config.color_scheme = "Catppuccin Latte"
 end
 
-config.font = wezterm.font({ family = "Monolisa Nerd Font" })
-config.font_size = 16
+local tabFontSize;
+
+config.font = wezterm.font({ family = "MonoLisa Nerd Font" })
+if (platform.is_win) then
+	config.font_size = 12
+	tabFontSize = 11
+else
+	config.font_size = 16
+	tabFontSize = 13
+end
 
 -- Slightly transparent and blurred background
 config.window_background_opacity = 0.9
@@ -27,8 +35,8 @@ config.window_decorations = "RESIZE|INTEGRATED_BUTTONS|MACOS_FORCE_ENABLE_SHADOW
 config.window_frame = {
 	-- Berkeley Mono for me again, though an idea could be to try a
 	-- serif font here instead of monospace for a nicer look?
-	font = wezterm.font({ family = "Monolisa Nerd Font", weight = "Bold" }),
-	font_size = 13,
+	font = wezterm.font({ family = "MonoLisa Nerd Font", weight = "Bold" }),
+	font_size = tabFontSize,
 }
 
 wezterm.on("update-status", function(window)

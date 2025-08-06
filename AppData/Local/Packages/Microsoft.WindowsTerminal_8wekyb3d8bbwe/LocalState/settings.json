@@ -29,9 +29,12 @@
             "id": "User.splitPane.A6751878"
         }
     ],
+    "compatibility.allowHeadless": true,
     "copyFormatting": "none",
-    "copyOnSelect": false,
+    "copyOnSelect": true,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+    "initialCols": 112,
+    "initialRows": 30,
     "keybindings": 
     [
         {
@@ -65,20 +68,21 @@
             "colorScheme": "Catppuccin Macchiato",
             "font": 
             {
-                "face": "MonoLisa Nerd Font"
-            }
+                "face": "MonoLisa NF"
+            },
+            "opacity": 80,
+            "padding": "0, 0, 0, 0",
+            "useAcrylic": true
         },
         "list": 
         [
             {
-                "colorScheme": "Catppuccin Macchiato",
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoLogo",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell"
             },
             {
-                "colorScheme": "Catppuccin Macchiato",
                 "commandline": "%SystemRoot%\\System32\\cmd.exe",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,

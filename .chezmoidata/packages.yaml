@@ -1,0 +1,4 @@
+packages:
+  winget:
+    - 'fzf'
+    - 'zoxide'

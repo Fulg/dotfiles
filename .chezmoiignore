@@ -4,4 +4,5 @@ README.md
 Documents
 AppData
 run_after__symlink-neovim-config_windows.ps1
+run_after_LinkPowerShellProfiles.ps1
 {{ end }}

@@ -1,5 +1,3 @@
-{{ if eq .chezmoi.os "windows" -}}
-
 # Self-elevate the script if required
 if (-Not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] 'Administrator')) {
   if ([int](Get-CimInstance -Class Win32_OperatingSystem | Select-Object -ExpandProperty BuildNumber) -ge 6000) {
@@ -19,6 +17,3 @@ Get-Item $Home/.config/powershell/*profile.ps1 | ForEach-Object {
     New-Item -ItemType HardLink -Path $linkPath -Target $_.FullName
   }
 }
-{{ else -}}
-#!/bin/sh
-{{ end -}}

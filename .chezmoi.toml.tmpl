@@ -5,17 +5,17 @@ follow = true # follow symlinks, so we can symlink ~\Documents to ~\OneDrive\Doc
 [data]
   email = {{ $email | quote }}
   shell = "PowerShell"
-  shellexe = "pwsh.exe"
+  shellexe = "powershell.exe"
 [merge]
   command = "code"
   args = "--wait $MERGED"
 [cd]
-  command = "pwsh"
+  command = "powershell"
   args = ["-NoProfile", "-NoLogo"]
 [diff]
   pager = "delta"
 [interpreters.ps1]
-  command = "pwsh"
+  command = "powershell"
   args = ["-NoLogo", "-NoProfile"]
 
 [edit]

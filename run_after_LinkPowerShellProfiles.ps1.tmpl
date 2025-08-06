@@ -1,0 +1,32 @@
+{{ if eq .chezmoi.os "windows" }}
+
+# remap legacy PowerShell profile directory to chezmoi profile directory
+$builtinBasePath = Join-Path ([Environment]::GetFolderPath('MyDocuments')) 'WindowsPowerShell'
+$basePath = Join-Path ([Environment]::GetFolderPath('MyDocuments')) 'PowerShell'
+
+if (-not (Test-Path $basePath)) {
+  New-Item -Path $basePath -ItemType Directory | Out-Null
+}
+
+if ((Get-Item $builtinBasePath -erroraction silentlycontinue).linktype -ne 'Junction') {
+  if (Test-Path $builtinBasePath) {
+    Write-Host "PowerShell profile directory already exists at $builtinBasePath. Confirm or cancel and move it."
+    Remove-Item $builtinBasePath -Confirm:$true
+  }
+  New-Item -Path $builtinBasePath -ItemType Junction -Value $basePath -Force | Out-Null
+}
+
+Get-Item $Home/.config/powershell/*profile.ps1 | ForEach-Object {
+  $linkPath = Join-Path $basePath $_.Name
+  if ((Get-Item $linkPath -erroraction silentlycontinue).linktype -ne 'HardLink') {
+    if (Test-Path $linkPath) {
+      Write-Host "Removing existing profile $linkPath to link to chezmoi profile. Confirm or cancel and move it."
+      Remove-Item $linkPath -Confirm:$true
+    }
+    New-Item -ItemType HardLink -Path $linkPath -Target $_.FullName
+  }
+}
+
+{{ else }}
+#!/bin/sh
+{{ end }}

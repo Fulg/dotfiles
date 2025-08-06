@@ -1,7 +1,5 @@
 {{- $email := promptStringOnce . "email" "Email address" -}}
 
-follow = true # follow symlinks, so we can symlink ~\Documents to ~\OneDrive\Documents
-
 [data]
   email = {{ $email | quote }}
   shell = "PowerShell"

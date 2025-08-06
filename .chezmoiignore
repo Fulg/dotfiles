@@ -1,0 +1,7 @@
+README.md
+
+{{ if not (eq .chezmoi.os "windows") }}
+Documents
+AppData
+run_after__symlink-neovim-config_windows.ps1
+{{ end }}

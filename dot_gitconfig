@@ -1,0 +1,29 @@
+[push]
+	default = current
+
+[user]
+	name = Benoit Miller
+	email = {{ .email | quote }}
+
+[credential "helperselector"]
+	selected = manager
+
+[core]
+	editor = code --wait
+	pager = delta
+
+[delta]
+	hyperlinks = true
+	hyperlinks-file-link-format = 'vscode://file/{path}:{line}'
+	line-numbers = true
+	navigate = true
+	true-color = "always"
+
+[interactive]
+    diffFilter = delta --color-only
+
+[init]
+	defaultBranch = main
+
+[merge]
+    conflictStyle = zdiff3

@@ -10,9 +10,10 @@ if (-Not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 }
 
 {{ range .packages.winget -}}
+Write-Host "`nInstalling package: {{ . }}"
 winget install {{ . | quote }}
 {{ end -}}
 
-Write-Host "Please close this window if there were no errors"
+Write-Host "`nPlease close this window if there were no errors`n"
 
 {{ end -}}

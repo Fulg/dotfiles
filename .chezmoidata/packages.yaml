@@ -1,4 +1,9 @@
 packages:
   winget:
+    - '7zip.7zip'
+    - 'ScooterSoftware.BeyondCompare.5'
     - 'fzf'
+    - 'Git.Git'
+    - 'JanDeDobbeleer.OhMyPosh'
+    - 'WinsiderSS.SystemInformer'
     - 'zoxide'

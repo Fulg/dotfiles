@@ -1,9 +1,11 @@
 packages:
   winget:
     - '7zip.7zip'
-    - 'ScooterSoftware.BeyondCompare.5'
     - 'fzf'
     - 'Git.Git'
     - 'JanDeDobbeleer.OhMyPosh'
+    - 'Microsoft.PowerShell'
+    - 'Microsoft.VisualStudioCode'
+    - 'ScooterSoftware.BeyondCompare.5'
     - 'WinsiderSS.SystemInformer'
     - 'zoxide'

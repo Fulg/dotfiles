@@ -1,5 +1,6 @@
 {{- $email := promptStringOnce . "email" "Email address" -}}
 
+{{ if eq .chezmoi.os "windows" -}}
 [data]
   email = {{ $email | quote }}
   shell = "PowerShell"
@@ -15,6 +16,7 @@
 [interpreters.ps1]
   command = "powershell"
   args = ["-NoLogo", "-NoProfile", "-NonInteractive"]
+{{ end -}}
 
 [edit]
   watch = true
